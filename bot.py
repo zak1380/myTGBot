@@ -3,30 +3,6 @@ from telebot.types import Message, ReplyKeyboardMarkup, KeyboardButton
 from config import BOT_TOKEN, ADMIN_ID, REGISTER_URL
 from database import save_user_data, get_all_user_ids
 
-
-
-from flask import Flask
-import threading
-
-app = Flask('')
-
-@app.route('/')
-def home():
-    return "Bot is alive!"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 bot = telebot.TeleBot(BOT_TOKEN)
 user_states = {}
 waiting_users = {}
@@ -237,13 +213,5 @@ def send_to_user(message: Message):
 
 
 
-
-
-
-
-def run_bot():
     print("🤖 Bot is running...")
     bot.polling()
-
-threading.Thread(target=run_bot).start()
-
