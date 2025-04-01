@@ -14,10 +14,8 @@ app = Flask('')
 def home():
     return "Bot is alive!"
 
-def run():
-    app.run(host='0.0.0.0', port=8080)
 
-threading.Thread(target=run).start()
+
 
 
 
@@ -239,5 +237,13 @@ def send_to_user(message: Message):
 
 
 
-print("🤖 Bot is running...")
-bot.polling()
+
+
+
+
+def run_bot():
+    print("🤖 Bot is running...")
+    bot.polling()
+
+threading.Thread(target=run_bot).start()
+
